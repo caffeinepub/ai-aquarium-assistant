@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@300;400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/assets/fonts/DMSerifDisplay.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: oklch(0.05 0 0);
+    --foreground: oklch(0.95 0.01 250);
+    --card: oklch(0.1 0.005 240);
+    --card-foreground: oklch(0.95 0.01 250);
+    --popover: oklch(0.1 0.005 240);
+    --popover-foreground: oklch(0.95 0.01 250);
+    --primary: oklch(0.58 0.18 218);
+    --primary-foreground: oklch(0.98 0.005 215);
+    --secondary: oklch(0.18 0.03 240);
+    --secondary-foreground: oklch(0.85 0.02 240);
+    --muted: oklch(0.15 0.01 240);
+    --muted-foreground: oklch(0.6 0.04 240);
+    --accent: oklch(0.6 0.17 185);
+    --accent-foreground: oklch(0.98 0.005 185);
+    --destructive: oklch(0.52 0.2 15);
+    --destructive-foreground: oklch(0.98 0.005 15);
+    --border: oklch(0.22 0.01 240);
+    --input: oklch(0.18 0.01 240);
+    --ring: oklch(0.58 0.18 218);
+    --radius: 0.75rem;
+    --chart-1: oklch(0.58 0.18 218);
+    --chart-2: oklch(0.6 0.17 185);
+    --chart-3: oklch(0.65 0.15 158);
+    --chart-4: oklch(0.72 0.14 55);
+    --chart-5: oklch(0.52 0.2 15);
+    --sidebar: oklch(0.08 0.005 240);
+    --sidebar-foreground: oklch(0.95 0.01 250);
+    --sidebar-primary: oklch(0.58 0.18 218);
+    --sidebar-primary-foreground: oklch(0.98 0.005 215);
+    --sidebar-accent: oklch(0.18 0.03 240);
+    --sidebar-accent-foreground: oklch(0.85 0.02 240);
+    --sidebar-border: oklch(0.22 0.01 240);
+    --sidebar-ring: oklch(0.58 0.18 218);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .ocean-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.22 0.1 235) 0%,
+      oklch(0.32 0.13 218) 40%,
+      oklch(0.4 0.15 195) 70%,
+      oklch(0.48 0.17 180) 100%
+    );
+  }
+  .ocean-card {
+    background: linear-gradient(
+      135deg,
+      oklch(0.1 0.008 220),
+      oklch(0.14 0.02 205)
+    );
+  }
+  .teal-glow {
+    box-shadow: 0 0 20px oklch(0.6 0.17 185 / 0.25), 0 4px 12px
+      oklch(0.38 0.13 218 / 0.15);
+  }
+  .water-bg {
+    background: radial-gradient(
+        ellipse at 20% 20%,
+        oklch(0.3 0.08 185 / 0.15) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 80% 80%,
+        oklch(0.25 0.08 218 / 0.15) 0%,
+        transparent 60%
+      ), oklch(0.05 0 0);
+  }
+}
